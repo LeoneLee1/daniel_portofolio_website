@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="Portofolio of Daniel Lee Runtuwene - Web Developer" />
+    <meta name="keywords" content="portofolio, Daniel Lee Runtuwene, web development" />
+    <meta name="author" content="Daniel Lee Runtuwene" />
+    <title>Portofolio - Daniel Lee Runtuwene</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="floating-elements">
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
+      <div class="floating-shape"></div>
+    </div>
+
+    <div class="container">
+      <div class="row mt-4">
+        <!-- Profile Card -->
+        <div class="col-md-4 fade-in mb-2">
+          <div class="glass-card profile-card">
+            <div class="avatar" onclick="showAvatarModal()" style="background-image: url('img/daniel.jpeg')"></div>
+
+            <!-- Avatar Modal -->
+            <div id="avatarModal" class="modal-avatar" onclick="hideAvatarModal()">
+              <span class="close-avatar" onclick="hideAvatarModal()">&times;</span>
+              <img id="avatarModalImage" class="modal-avatar-content" src="img/daniel.jpeg" />
+            </div>
+
+            <h4 class="name-title">Daniel Lee Runtuwene</h4>
+            <p class="role-title">Fullstack Web & Mobile Developer</p>
+            <p class="tech-stack">Laravel | React Native</p>
+
+            <div class="social-links">
+              <a href="https://www.instagram.com/me.daniel01/" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://github.com/LeoneLee1" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/daniel-lee-runtuwene-1b339a294/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://www.upwork.com/freelancers/~01a2ed24627b9a8140?mp_source=share" target="_blank" title="Upwork">
+                <i class="fab fa-upwork"></i>
+              </a>
+            </div>
+
+            <div class="action-buttons">
+              <a href="https://wa.me/6285399014003" class="btn-gradient" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Contact via WhatsApp
+              </a>
+              <a href="assets/Daniel CV.pdf" class="btn-gradient btn-secondary" target="_blank">
+                <i class="fa fa-download"></i>
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-8 fade-in" style="animation-delay: 0.2s">
+          <div class="glass-card main-content">
+            <!-- About Me Section -->
+            <h4 class="section-title">About Me</h4>
+            <p class="about-text">
+              Hi, I'm Daniel Lee, I'm a 22 year old with a masters degree in computer science, I enjoy coding and developing projects as a part time occupation either for personal use or clients. I have been working as a web developer for
+              about 5 years now.
+            </p>
+            <p class="about-text">
+              I have already had the opportunity to apply these skills while working as a project department member at PT Mustika Jaya Lestari where I built websites using Laravel (MySQL, PHP) and React Native Mobile Apps.
+            </p>
+
+            <!-- Skills Section -->
+            <h4 class="section-title">Skills</h4>
+            <div class="skills-container">
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">React Native</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">API Integration</span>
+              <span class="skill-tag">REST API</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Web Development</span>
+              <span class="skill-tag">API</span>
+              <span class="skill-tag">Web Application</span>
+              <span class="skill-tag">Mobile App Development</span>
+              <span class="skill-tag">Bootstrap</span>
+            </div>
+
+            <!-- Projects Section -->
+            <h4 class="section-title">Projects</h4>
+            <div class="projects-grid">
+              <!-- Project 1 -->
+              <div class="project-card" data-bs-toggle="modal" data-bs-target="#project1" style="cursor: pointer">
+                <img src="img/PresensiKu/PresensiKu.png" class="project-image" alt="PresensiKu Project" />
+                <div class="project-info">
+                  <h6 class="project-title">PresensiKu | Smart Attendance Range</h6>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="project-card" data-bs-toggle="modal" data-bs-target="#project2" style="cursor: pointer">
+                <img src="img/GymCore/GymCore.png" class="project-image" alt="GymCore Project" />
+                <div class="project-info">
+                  <h6 class="project-title">Web Gym Landing Page | Transform Your Body. Elevate Your Life.</h6>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="project-card" data-bs-toggle="modal" data-bs-target="#project3" style="cursor: pointer">
+                <img src="img/AyamBangkok/AyamBangkok.png" class="project-image" alt="Attendance System" />
+                <div class="project-info">
+                  <h6 class="project-title">Attendance System Apps | Employee Attendance Control System</h6>
+                </div>
+              </div>
+
+              <!-- Project 4 -->
+              <div class="project-card" data-bs-toggle="modal" data-bs-target="#project4" style="cursor: pointer">
+                <img src="img/LaporPak/LaporPak.png" class="project-image" alt="LaporPak Project" />
+                <div class="project-info">
+                  <h6 class="project-title">Report Web Mobile | Lapor Pak - Laporkan Masalah, Kami Tindak lanjuti</h6>
+                </div>
+              </div>
+
+              <!-- Project 5 -->
+              <div class="project-card" data-bs-toggle="modal" data-bs-target="#project5" style="cursor: pointer">
+                <img src="img/WebLibrary/WebLibrary.png" class="project-image" alt="Web Library Project" />
+                <div class="project-info">
+                  <h6 class="project-title">Web Library Landing Page | A Community of Book Lovers and Reviewers</h6>
+                </div>
+              </div>
+
+              <!-- Project 6 -->
+              <div class="project-card" data-bs-toggle="modal" data-bs-target="#project6" style="cursor: pointer">
+                <img src="img/WebCompany/WebCompany.png" class="project-image" alt="Company Profile" />
+                <div class="project-info">
+                  <h6 class="project-title">Company Profile Landing Page | A Partner in Digital Transformation</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Page -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="project1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">PresensiKu | Smart Attendance Range</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mb-4">
+                  <h6>My Role : Fullstack Developer</h6>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-2">Project Description:</h6>
+                  <p>
+                    PresensiKu is a smart location-based attendance application that allows students and teachers to take attendance only when they are within a certain radius of the school or classroom location. This project is part of the
+                    complete PresensiKu system consisting of Backend (Laravel API) and Frontend (React Native App).
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-3">Skills and deliverables</h6>
+                  <div class="skills-container">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">API Integration</span>
+                    <span class="skill-tag">REST API</span>
+                    <span class="skill-tag">TypeScript</span>
+                  </div>
+                </div>
+                <footer>
+                  <small>Published on Jun 14, 2025</small>
+                </footer>
+              </div>
+              <div class="col-md-8">
+                <div class="mb-2">
+                  <img src="img/PresensiKu/PresensiKu.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/1.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/2.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/3.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/web1.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/web2.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/web3.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/web4.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/web5.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/web6.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/web7.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/PresensiKu/web8.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal 1 -->
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="project2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Web Gym Landing Page | Transform Your Body. Elevate Your Life.</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mb-4">
+                  <h6>My Role : Fullstack Web Developer</h6>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-2">Project Description:</h6>
+                  <p>
+                    This project is a responsive and modern landing page website for a fitness center or gym, designed to attract new members and promote gym services. The landing page highlights key features such as membership benefits,
+                    available programs, trainer profiles, class schedules, and call-to-action buttons to join or book a trial session.
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-3">Skills and deliverables</h6>
+                  <div class="skills-container">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">PHP</span>
+                  </div>
+                </div>
+                <footer>
+                  <small>Published on Jun 12, 2025</small>
+                </footer>
+              </div>
+              <div class="col-md-8">
+                <div class="mb-2">
+                  <img src="img/GymCore/GymCore.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/2.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/3.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/4.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/5.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/6.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/7.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/8.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/9.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/GymCore/10.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal 2 -->
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="project3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Attendance System Apps | Employee Attendance Control System</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mb-4">
+                  <h6>My Role : Fullstack Developer</h6>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-2">Project Description:</h6>
+                  <p>
+                    More than attendance, it’s your daily smart assistant. From checking in with a barcode scan to ordering meals and reserving rooms or Zoom meetings, this mobile app brings everything you need into one seamless experience.
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-3">Skills and deliverables</h6>
+                  <div class="skills-container">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">REST API</span>
+                    <span class="skill-tag">API Integration</span>
+                    <span class="skill-tag">JavaScript</span>
+                  </div>
+                </div>
+                <footer>
+                  <small>Published on May 22, 2025</small>
+                </footer>
+              </div>
+              <div class="col-md-8">
+                <div class="mb-2">
+                  <img src="img/AyamBangkok/AyamBangkok.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/AyamBangkok/2.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/AyamBangkok/3.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/AyamBangkok/4.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal 3 -->
+
+    <!-- Modal 4 -->
+    <div class="modal fade" id="project4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Report Web Mobile | Lapor Pak - Laporkan Masalah, Kami Tindak lanjuti</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mb-4">
+                  <h6>My Role : Fullstack Web Mobile Developer</h6>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-2">Project Description:</h6>
+                  <p>
+                    Lapor Pak makes it easy to report issues anytime, anywhere, right from your smartphone. Submit reports with photos, select the report category, and track the status of your case in real-time. All in one simple platform.
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-3">Skills and deliverables</h6>
+                  <div class="skills-container">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">JavaScript</span>
+                  </div>
+                </div>
+                <footer>
+                  <small>Published on May 22, 2025</small>
+                </footer>
+              </div>
+              <div class="col-md-8">
+                <div class="mb-2">
+                  <img src="img/LaporPak/LaporPak.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/LaporPak/2.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/LaporPak/3.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/LaporPak/4.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/LaporPak/5.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/LaporPak/6.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal 4 -->
+
+    <!-- Modal 5 -->
+    <div class="modal fade" id="project5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Web Library Landing Page | A Community of Book Lovers and Reviewers</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mb-4">
+                  <h6>My Role : Fullstack Web Developer</h6>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-2">Project Description:</h6>
+                  <p>More than just a review site, it's a community of passionate readers. Connect through shared stories, rate what you've read, and inspire others with your perspective.</p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-3">Skills and deliverables</h6>
+                  <div class="skills-container">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">JavaScript</span>
+                  </div>
+                </div>
+                <footer>
+                  <small>Published on May 22, 2025</small>
+                </footer>
+              </div>
+              <div class="col-md-8">
+                <div class="mb-2">
+                  <img src="img/WebLibrary/WebLibrary.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/WebLibrary/2.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/WebLibrary/3.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/WebLibrary/4.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/WebLibrary/5.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal 5 -->
+
+    <!-- Modal 6 -->
+    <div class="modal fade" id="project6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Company Profile Landing Page | A Partner in Digital Transformation</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mb-4">
+                  <h6>My Role : Fullstack Web Developer</h6>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-2">Project Description:</h6>
+                  <p>
+                    Mustika Jaya Lestari is a growing company based in Indonesia, aiming to strengthen its digital presence through a professional company profile website. I was fully responsible for developing the website based on the
+                    design provided by their team. The site was built with a focus on performance, responsiveness, and clean code structure, ensuring a smooth user experience across devices. This project highlights my role as a developer in
+                    turning design concepts into a fully functional, live website.
+                  </p>
+                </div>
+                <div class="mb-4">
+                  <h6 class="mb-3">Skills and deliverables</h6>
+                  <div class="skills-container">
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">JavaScript</span>
+                  </div>
+                </div>
+                <footer>
+                  <small>Published on May 22, 2025</small>
+                </footer>
+              </div>
+              <div class="col-md-8">
+                <div class="mb-2">
+                  <img src="img/WebCompany/WebCompany.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/WebCompany/2.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/WebCompany/3.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/WebCompany/4.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+                <div class="mb-2">
+                  <img src="img/WebCompany/5.png" class="img-fluid" style="border-radius: 5px" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal 6 -->
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      function showAvatarModal() {
+        document.getElementById("avatarModal").style.display = "block";
+      }
+
+      function hideAvatarModal() {
+        document.getElementById("avatarModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="Portofolio of Daniel Lee Runtuwene - Web Developer" />
+    <meta name="keywords" content="portofolio, Daniel Lee Runtuwene, web development" />
+    <meta name="author" content="Daniel Lee Runtuwene" />
+    <title>Portofolio - Daniel Lee Runtuwene</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" />
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .social-links a {
+        margin-right: 15px;
+        font-size: 24px;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #ffff;
+        border-radius: 0.3rem;
+      }
+
+      .project-card {
+        margin-top: 20px;
+      }
+
+      .toggle.btn {
+        min-width: 3.7rem;
+        min-height: 2.15rem;
+      }
+
+      .toggle {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .btn {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+
+      .toggle input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      button,
+      input {
+        overflow: visible;
+      }
+
+      .toggle-group {
+        position: absolute;
+        width: 200%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transition: left 0.35s;
+      }
+
+      .toggle-on.btn {
+        padding-right: 1.5rem;
+      }
+
+      .toggle-group label,
+      .toggle-group span {
+        cursor: pointer;
+      }
+
+      .toggle-on {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+      }
+
+      .toggle-off.btn {
+        padding-left: 1.5rem;
+      }
+
+      .toggle-group label,
+      .toggle-group span {
+        cursor: pointer;
+      }
+
+      .toggle-off {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .toggle-group label,
+      .toggle-group span {
+        cursor: pointer;
+      }
+
+      .toggle-handle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background-color: #ffff;
+        border: 1px solid #dddd;
+        transition: left 0.35s;
+      }
+
+      .btn-light {
+        color: #212529;
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+      }
+      .avatar {
+        background-image: url("img/daniel.jpeg");
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .avatar:hover {
+        opacity: 0.8;
+      }
+
+      /* Modal style */
+      .modal-avatar {
+        display: none;
+        position: fixed;
+        z-index: 1050;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding-top: 60px;
+        overflow: auto;
+      }
+
+      .modal-avatar-content {
+        display: block;
+        margin: auto;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 12px;
+      }
+
+      .close-avatar {
+        position: absolute;
+        top: 50px;
+        right: 30px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close-avatar:hover {
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-4">
+        <!-- card 1 -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-2" style="display: flex; justify-content: center; align-items: center">
+                <div class="avatar" onclick="showAvatarModal()"></div>
+              </div>
+              <!-- Modal (popup fullscreen) -->
+              <div id="avatarModal" class="modal-avatar" onclick="hideAvatarModal()">
+                <span class="close-avatar" onclick="hideAvatarModal()">&times;</span>
+                <img id="avatarModalImage" class="modal-avatar-content" src="img/daniel.jpeg" />
+              </div>
+              <div class="text-center">
+                <h4>Daniel Lee Runtuwene</h4>
+                <p>Fullstack Web & Mobile Developer</p>
+                <i>Laravel | React Native</i>
+                <!-- social links -->
+                <div class="social-links mt-3">
+                  <a href="https://www.instagram.com/me.daniel01/" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://github.com/LeoneLee1" target="_blank"><i class="fab fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/daniel-lee-runtuwene-1b339a294/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                  <a href="https://www.upwork.com/freelancers/~01a2ed24627b9a8140?mp_source=share" target="_blank"><i class="fab fa-upwork"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="my-4">
+            <a href="https://wa.me/6285399014003" class="btn btn-primary" style="width: 100%; display: block" target="_blank"><i class="fab fa-whatsapp"></i>&nbsp;WhatsApp</a>
+            <a href="assets/Daniel CV.pdf" class="btn btn-warning mt-3" style="width: 100%; display: block" target="_blank"><i class="fa fa-download"></i>&nbsp;Download CV</a>
+          </div>
+        </div>
+        <!-- card 2 -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <!-- <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">English</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Indonesia</a>
+                </li>
+              </ul> 
+              <div class="mt-3"></div> -->
+              <!-- About Me Section -->
+              <h4 id="aboutMeTitle">About Me</h4>
+              <p id="aboutMeContent">
+                Hi, I'm Daniel Lee, I'm a 22 year old with a masters degree in computer science, I enjoy coding and developing projects as a part time occupation either for personal use or clients. I have been working as a web developer for
+                about 5 years now.
+              </p>
+              <p id="aboutMeContent">
+                I have already had the opportunity to apply these skills while working as a project department member at PT Mustika Jaya Lestari where I built websites using Laravel (MySQL, PHP) and React Native Mobile Apps.
+              </p>
+              <h4 id="skillTitle">Skills</h4>
+              <div id="skillContent" style="display: flex; flex-wrap: wrap; gap: 10px">
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Laravel</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">React Native</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">MySQL</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">API Integration</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">REST API</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">JavaScript</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">TypeScript</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">PHP</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Web Development</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">API</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Web Application</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Mobile App Development</span>
+                <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Bootstrap</span>
+              </div>
+              <div class="mt-4"></div>
+              <h4 id="projectTitle" class="mb-3">Projects</h4>
+              <div class="row">
+                <!-- Project 1 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 project-card">
+                  <div class="card h-110">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#project1">
+                      <img src="img/PresensiKu/PresensiKu.png" class="card-img-top" alt="portofolio" />
+                    </a>
+                    <!-- Modal 1 -->
+                    <div class="modal fade" id="project1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">PresensiKu | Smart Attendance Range</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="mb-4">
+                                  <h6>My Role : Fullstack Developer</h6>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-2">Project Description:</h6>
+                                  <p>
+                                    PresensiKu is a smart location-based attendance application that allows students and teachers to take attendance only when they are within a certain radius of the school or classroom location. This
+                                    project is part of the complete PresensiKu system consisting of Backend (Laravel API) and Frontend (React Native App).
+                                  </p>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-3">Skills and deliverables</h6>
+                                  <div id="skillContent" style="display: flex; flex-wrap: wrap; gap: 10px">
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Laravel</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">React Native</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">MySQL</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">API Integration</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">REST API</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">TypeScript</span>
+                                  </div>
+                                </div>
+                                <footer>
+                                  <small class="text-muted">Published on Jun 14, 2025</small>
+                                </footer>
+                              </div>
+                              <div class="col-md-8">
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/PresensiKu.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/1.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/2.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/3.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/web1.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/web2.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/web3.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/web4.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/web5.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/web6.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/web7.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/PresensiKu/web8.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="mt-3">PresensiKu | Smart Attendance Range</h6>
+                </div>
+                <!-- End Project 1 -->
+
+                <!-- Project 2 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 project-card">
+                  <div class="card h-110">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#project2">
+                      <img src="img/GymCore/GymCore.png" class="card-img-top" alt="portofolio" />
+                    </a>
+                    <!-- Modal 2 -->
+                    <div class="modal fade" id="project2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Web Gym Landing Page | Transform Your Body. Elevate Your Life.</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="mb-4">
+                                  <h6>My Role : Fullstack Web Developer</h6>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-2">Project Description:</h6>
+                                  <p>
+                                    This project is a responsive and modern landing page website for a fitness center or gym, designed to attract new members and promote gym services. The landing page highlights key features such as
+                                    membership benefits, available programs, trainer profiles, class schedules, and call-to-action buttons to join or book a trial session.
+                                  </p>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-3">Skills and deliverables</h6>
+                                  <div id="skillContent" style="display: flex; flex-wrap: wrap; gap: 10px">
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Laravel</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">MySQL</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Bootstrap</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">CSS</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">HTML</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">PHP</span>
+                                  </div>
+                                </div>
+                                <footer>
+                                  <small class="text-muted">Published on Jun 12, 2025</small>
+                                </footer>
+                              </div>
+                              <div class="col-md-8">
+                                <div class="mb-2">
+                                  <img src="img/GymCore/GymCore.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/2.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/3.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/4.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/5.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/6.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/7.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/8.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/9.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/GymCore/10.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="mt-3">Web Gym Landing Page | Transform Your Body. Elevate Your Life.</h6>
+                </div>
+                <!-- End Project 2 -->
+
+                <!-- Project 3 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 project-card">
+                  <div class="card h-110">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#project3">
+                      <img src="img/AyamBangkok/AyamBangkok.png" class="card-img-top" alt="portofolio" />
+                    </a>
+                    <!-- Modal 3 -->
+                    <div class="modal fade" id="project3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Attendance System Apps | Employee Attendance Control System</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="mb-4">
+                                  <h6>My Role : Fullstack Developer</h6>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-2">Project Description:</h6>
+                                  <p>
+                                    More than attendance, it’s your daily smart assistant. From checking in with a barcode scan to ordering meals and reserving rooms or Zoom meetings, this mobile app brings everything you need into one
+                                    seamless experience.
+                                  </p>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-3">Skills and deliverables</h6>
+                                  <div id="skillContent" style="display: flex; flex-wrap: wrap; gap: 10px">
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Laravel</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">MySQL</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">React Native</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">REST API</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">API Integration</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">JavaScript</span>
+                                  </div>
+                                </div>
+                                <footer>
+                                  <small class="text-muted">Published on May 22, 2025</small>
+                                </footer>
+                              </div>
+                              <div class="col-md-8">
+                                <div class="mb-2">
+                                  <img src="img/AyamBangkok/AyamBangkok.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/AyamBangkok/2.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/AyamBangkok/3.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/AyamBangkok/4.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="mt-3">Attendance System Apps | Employee Attendance Control System</h6>
+                </div>
+                <!-- End Project 3 -->
+
+                <!-- Project 4 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 project-card">
+                  <div class="card h-110">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#project4">
+                      <img src="img/LaporPak/LaporPak.png" class="card-img-top" alt="portofolio" />
+                    </a>
+                    <!-- Modal 4 -->
+                    <div class="modal fade" id="project4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Report Web Mobile | Lapor Pak - Laporkan Masalah, Kami Tindak lanjuti</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="mb-4">
+                                  <h6>My Role : Fullstack Web Mobile Developer</h6>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-2">Project Description:</h6>
+                                  <p>
+                                    Lapor Pak makes it easy to report issues anytime, anywhere, right from your smartphone. Submit reports with photos, select the report category, and track the status of your case in real-time. All in one
+                                    simple platform.
+                                  </p>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-3">Skills and deliverables</h6>
+                                  <div id="skillContent" style="display: flex; flex-wrap: wrap; gap: 10px">
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Laravel</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">MySQL</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">PHP</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Bootstrap</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">JavaScript</span>
+                                  </div>
+                                </div>
+                                <footer>
+                                  <small class="text-muted">Published on May 22, 2025</small>
+                                </footer>
+                              </div>
+                              <div class="col-md-8">
+                                <div class="mb-2">
+                                  <img src="img/LaporPak/LaporPak.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/LaporPak/2.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/LaporPak/3.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/LaporPak/4.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/LaporPak/5.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/LaporPak/6.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="mt-3">Report Web Mobile | Lapor Pak - Laporkan Masalah, Kami Tindak lanjuti</h6>
+                </div>
+                <!-- End Project 4 -->
+
+                <!-- Project 5 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 project-card">
+                  <div class="card h-110">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#project5">
+                      <img src="img/WebLibrary/WebLibrary.png" class="card-img-top" alt="portofolio" />
+                    </a>
+                    <!-- Modal 5 -->
+                    <div class="modal fade" id="project5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Web Library Landing Page | A Community of Book Lovers and Reviewers</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="mb-4">
+                                  <h6>My Role : Fullstack Web Developer</h6>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-2">Project Description:</h6>
+                                  <p>More than just a review site, it's a community of passionate readers. Connect through shared stories, rate what you've read, and inspire others with your perspective.</p>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-3">Skills and deliverables</h6>
+                                  <div id="skillContent" style="display: flex; flex-wrap: wrap; gap: 10px">
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Laravel</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">MySQL</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">PHP</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Bootstrap</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">JavaScript</span>
+                                  </div>
+                                </div>
+                                <footer>
+                                  <small class="text-muted">Published on May 22, 2025</small>
+                                </footer>
+                              </div>
+                              <div class="col-md-8">
+                                <div class="mb-2">
+                                  <img src="img/WebLibrary/WebLibrary.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/WebLibrary/2.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/WebLibrary/3.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/WebLibrary/4.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/WebLibrary/5.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="mt-3">Web Library Landing Page | A Community of Book Lovers and Reviewers</h6>
+                </div>
+                <!-- End Project 5 -->
+
+                <!-- Project 6 -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 project-card">
+                  <div class="card h-110">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#project6">
+                      <img src="img/WebCompany/WebCompany.png" class="card-img-top" alt="portofolio" />
+                    </a>
+                    <!-- Modal 6 -->
+                    <div class="modal fade" id="project6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Company Profile Landing Page | A Partner in Digital Transformation</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="mb-4">
+                                  <h6>My Role : Fullstack Web Developer</h6>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-2">Project Description:</h6>
+                                  <p>
+                                    Mustika Jaya Lestari is a growing company based in Indonesia, aiming to strengthen its digital presence through a professional company profile website. I was fully responsible for developing the website
+                                    based on the design provided by their team. The site was built with a focus on performance, responsiveness, and clean code structure, ensuring a smooth user experience across devices. This project
+                                    highlights my role as a developer in turning design concepts into a fully functional, live website.
+                                  </p>
+                                </div>
+                                <div class="mb-4">
+                                  <h6 class="mb-3">Skills and deliverables</h6>
+                                  <div id="skillContent" style="display: flex; flex-wrap: wrap; gap: 10px">
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Laravel</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">MySQL</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">PHP</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">Bootstrap</span>
+                                    <span style="background-color: #ebecee; padding: 6px 12px; border-radius: 8px">JavaScript</span>
+                                  </div>
+                                </div>
+                                <footer>
+                                  <small class="text-muted">Published on May 22, 2025</small>
+                                </footer>
+                              </div>
+                              <div class="col-md-8">
+                                <div class="mb-2">
+                                  <img src="img/WebCompany/WebCompany.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/WebCompany/2.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/WebCompany/3.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/WebCompany/4.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                                <div class="mb-2">
+                                  <img src="img/WebCompany/5.png" class="img-fluid" style="border-radius: 5px" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="mt-3">Company Profile Landing Page | A Partner in Digital Transformation</h6>
+                </div>
+                <!-- End Project 6 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      function showAvatarModal() {
+        document.getElementById("avatarModal").style.display = "block";
+      }
+
+      function hideAvatarModal() {
+        document.getElementById("avatarModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
